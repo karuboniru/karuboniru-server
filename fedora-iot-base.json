@@ -94,7 +94,7 @@
          "sudo", "util-linux", "vim-minimal",
          "systemd", "systemd-resolved",
          "less", "tar",
-	 "fwupd", "fwupd-plugin-modem-manager",
+	 "fwupd", "fwupd-plugin-modem-manager", "fwupd-plugin-uefi-capsule-data",
          "greenboot", "greenboot-default-health-checks",
          "ignition", "zezere-ignition",
          "zram-generator", "zram-generator-defaults",
