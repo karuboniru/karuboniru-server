@@ -94,7 +94,7 @@
          "sudo", "util-linux", "vim-minimal",
          "systemd", "systemd-resolved",
          "less", "tar",
-	 "fwupd", "fwupd-plugin-modem-manager", "fwupd-plugin-uefi-capsule-data",
+	 "fwupd", "fwupd-plugin-modem-manager",
          "greenboot", "greenboot-default-health-checks",
          "ignition", "zezere-ignition",
          "zram-generator", "zram-generator-defaults",
@@ -112,18 +112,17 @@
          "parsec", "dbus-parsec"],
 
     "packages-aarch64": ["grub2-efi-aa64", "efibootmgr", "shim-aa64", "fwupd-efi",
-                         "uboot-images-armv8", "bcm283x-firmware",
+                         "uboot-images-armv8", "bcm283x-firmware", "fwupd-plugin-uefi-capsule-data",
                          "arm-image-installer", "iwl7260-firmware", "iwlax2xx-firmware"],
 
-    "packages-armhfp": ["grub2-efi-arm", "efibootmgr",
-                        "uboot-images-armv7", "bcm283x-firmware",
+    "packages-armhfp": ["grub2-efi-arm", "efibootmgr", "uboot-images-armv7", "bcm283x-firmware",
                         "arm-image-installer"],
 
     "packages-x86_64": ["grub2", "grub2-efi-x64", "efibootmgr", "shim-x64", "fwupd-efi", "microcode_ctl",
                         "iwl1000-firmware", "iwl100-firmware", "iwl105-firmware", "iwl135-firmware",
                         "iwl2000-firmware", "iwl2030-firmware", "iwl3160-firmware", "iwl5000-firmware",
                         "iwl5150-firmware", "iwl6000-firmware", "iwl6050-firmware", "iwl7260-firmware",
-                        "iwlax2xx-firmware"],
+                        "iwlax2xx-firmware", "fwupd-plugin-uefi-capsule-data"],
 
     "default_target": "multi-user.target",
 
