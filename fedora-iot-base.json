@@ -109,18 +109,18 @@
          "kernel-tools", "libgpiod-utils",
          "podman", "podman-plugins", "container-selinux", "skopeo", "criu",
          "slirp4netns", " containernetworking-plugins",
+         "parsec", "dbus-parsec",
          "clevis", "clevis-dracut", "clevis-luks", "clevis-pin-tpm2",
-         "parsec", "dbus-parsec"],
+         "efibootmgr", "fwupd-efi", "fwupd-plugin-uefi-capsule-data",
+         "iwl7260-firmware", "iwlax2xx-firmware"],
 
-    "packages-aarch64": ["grub2-efi-aa64", "efibootmgr", "shim-aa64", "fwupd-efi",
-                         "uboot-images-armv8", "bcm283x-firmware", "fwupd-plugin-uefi-capsule-data",
-                         "arm-image-installer", "iwl7260-firmware", "iwlax2xx-firmware"],
+    "packages-aarch64": ["grub2-efi-aa64", "shim-aa64",
+         "uboot-images-armv8", "bcm283x-firmware", "arm-image-installer"],
 
-    "packages-x86_64": ["grub2", "grub2-efi-x64", "efibootmgr", "shim-x64", "fwupd-efi", "microcode_ctl",
-                        "iwl1000-firmware", "iwl100-firmware", "iwl105-firmware", "iwl135-firmware",
-                        "iwl2000-firmware", "iwl2030-firmware", "iwl3160-firmware", "iwl5000-firmware",
-                        "iwl5150-firmware", "iwl6000-firmware", "iwl6050-firmware", "iwl7260-firmware",
-                        "iwlax2xx-firmware", "fwupd-plugin-uefi-capsule-data"],
+    "packages-x86_64": ["grub2-efi-x64", "shim-x64", "microcode_ctl",
+         "iwl1000-firmware", "iwl100-firmware", "iwl105-firmware", "iwl135-firmware",
+         "iwl2000-firmware", "iwl2030-firmware", "iwl3160-firmware", "iwl5000-firmware",
+         "iwl5150-firmware", "iwl6000-firmware", "iwl6050-firmware"],
 
     "default_target": "multi-user.target",
 
