@@ -108,7 +108,7 @@
          "bluez", "bluez-libs", "bluez-mesh",
          "kernel-tools", "libgpiod-utils",
          "podman", "podman-plugins", "container-selinux", "skopeo", "criu",
-         "slirp4netns", " containernetworking-plugins",
+         "containernetworking-plugins", "slirp4netns", "netavark",
          "parsec", "dbus-parsec",
          "clevis", "clevis-dracut", "clevis-luks", "clevis-pin-tpm2",
          "efibootmgr", "fwupd-efi", "fwupd-plugin-uefi-capsule-data",
