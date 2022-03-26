@@ -78,7 +78,7 @@
          "rpm-ostree", "rpm", "polkit", "lvm2",
          "cryptsetup", "pinentry",
          "keyutils", "cracklib-dicts",
-         "e2fsprogs", "xfsprogs", "dosfstools",
+         "e2fsprogs", "dosfstools",
          "gnupg2", "authselect",
          "basesystem", "python3", "bash",
          "xz", "gzip",
