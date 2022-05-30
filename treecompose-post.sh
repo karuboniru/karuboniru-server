@@ -3,6 +3,7 @@
 set -xeuo pipefail
 
 # From https://github.com/coreos/fedora-coreos-config/blob/testing-devel/overlay.d/05core/usr/lib/systemd/journald.conf.d/10-coreos-persistent.conf
+install -dm0755 /usr/lib/systemd/journald.conf.d/
 echo -e "[Journal]\nStorage=persistent" > /usr/lib/systemd/journald.conf.d/10-persistent.conf
 
 # See: https://src.fedoraproject.org/rpms/glibc/pull-request/4
