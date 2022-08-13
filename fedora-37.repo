@@ -1,12 +1,12 @@
-[fedora-37]
-name=Fedora 37 - $basearch
+[fedora-38]
+name=Fedora 38 - $basearch
 failovermethod=priority
-#baseurl=http://download.fedoraproject.org/pub/fedora/linux/releases/37/Everything/$basearch/os/
-metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-37&arch=$basearch
+#baseurl=http://download.fedoraproject.org/pub/fedora/linux/releases/38/Everything/$basearch/os/
+metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-38&arch=$basearch
 enabled=1
 #metadata_expire=7d
 repo_gpgcheck=0
 type=rpm
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-37-$basearch
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-38-$basearch
 skip_if_unavailable=False
