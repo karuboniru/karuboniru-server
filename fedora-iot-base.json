@@ -12,8 +12,8 @@
 
     "documentation": false,
 
-    "automatic_version_prefix": "38",
-    "mutate-os-release": "38",
+    "automatic_version_prefix": "39",
+    "mutate-os-release": "39",
 
     "initramfs-args": ["--no-hostonly",
                        "--add", "ignition watchdog"],
