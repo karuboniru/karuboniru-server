@@ -15,3 +15,8 @@ for x in /usr/sbin/glibc_post_upgrade.*; do
         ln -srf /usr/bin/true ${x}
     fi
 done
+
+# Remove loader directory causing issues in Anaconda in unified core mode
+# Will be obsolete once we start using bootupd
+# See - https://pagure.io/workstation-ostree-config/pull-request/344
+rm -rf /usr/lib/ostree-boot/loader
