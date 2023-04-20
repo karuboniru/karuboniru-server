@@ -114,6 +114,7 @@
          "clevis", "clevis-dracut", "clevis-luks", "clevis-pin-tpm2",
          "efibootmgr", "fwupd-efi", "fwupd-plugin-uefi-capsule-data",
          "iwl7260-firmware", "iwlax2xx-firmware"],
+         "atheros-firmware", "brcmfmac-firmware", "realtek-firmware"],
 
     "packages-aarch64": ["grub2-efi-aa64", "shim-aa64",
          "uboot-images-armv8", "bcm283x-firmware", "arm-image-installer"],
