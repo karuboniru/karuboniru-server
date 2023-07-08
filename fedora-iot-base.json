@@ -117,7 +117,8 @@
          "atheros-firmware", "brcmfmac-firmware", "realtek-firmware"],
 
     "packages-aarch64": ["grub2-efi-aa64", "shim-aa64",
-         "uboot-images-armv8", "bcm283x-firmware", "arm-image-installer"],
+         "uboot-images-armv8", "bcm283x-firmware", "arm-image-installer",
+         "optee_client"],
 
     "packages-x86_64": ["grub2-efi-x64", "shim-x64", "microcode_ctl"],
 
