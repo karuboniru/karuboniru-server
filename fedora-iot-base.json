@@ -17,7 +17,7 @@
 
     "initramfs-args": ["--no-hostonly",
                        "--add", "ignition watchdog"],
-    "boot_location": "new",
+    "boot_location": "modules",
 
     "install-langs-comment": "Keep this in sync with treecompose-post.sh",
     "install-langs": [
