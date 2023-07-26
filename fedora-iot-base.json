@@ -195,5 +195,5 @@
 		"parsec.service",
 		"dbus-parsec.service",
 		"zezere_ignition.timer",
-		"zezere_ignition_banner.service",]
+		"zezere_ignition_banner.service"]
 }
