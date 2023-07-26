@@ -169,7 +169,8 @@
 		"xfsprogs",
 		"xz",
 		"zezere-ignition",
-		"zram-generator"],
+		"zram-generator",
+		"zram-generator-defaults"],
 
     "packages-aarch64": ["arm-image-installer",
 		"bcm283x-firmware",
