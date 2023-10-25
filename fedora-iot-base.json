@@ -90,7 +90,7 @@
 		"containernetworking-plugins",
 		"coreutils",
 		"cracklib-dicts",
-		"criu",
+		"criu", "criu-libs",
 		"cryptsetup",
 		"curl",
 		"dbus-parsec",
