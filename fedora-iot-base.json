@@ -6,6 +6,8 @@
 
     "selinux": true,
 
+    "ima": true,
+
     "tmp-is-dir": true,
 
     "recommends": false,
