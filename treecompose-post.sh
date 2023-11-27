@@ -20,3 +20,10 @@ done
 # Will be obsolete once we start using bootupd
 # See - https://pagure.io/workstation-ostree-config/pull-request/344
 rm -rf /usr/lib/ostree-boot/loader
+
+# Undo RPM scripts enabling units; we want the presets to be canonical
+# https://github.com/projectatomic/rpm-ostree/issues/1803
+rm -rf /etc/systemd/system/*
+systemctl preset-all
+rm -rf /etc/systemd/user/*
+systemctl --user --global preset-all
