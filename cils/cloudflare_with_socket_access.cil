@@ -1,0 +1,11 @@
+(block cloudflare_with_socket_access
+    (blockinherit container)
+    (blockinherit net_container)
+
+    (allow process node_t ( icmp_socket  ( node_bind )))
+    
+    (allow process var_run_t ( sock_file ( write ))) 
+    (allow process comiclib.process ( unix_stream_socket ( connectto )))
+    (allow process cockpit_ws_t ( unix_stream_socket ( connectto )))
+    (allow process container_caddy.process ( unix_stream_socket ( connectto )))
+)

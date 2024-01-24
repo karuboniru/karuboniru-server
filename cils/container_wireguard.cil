@@ -1,0 +1,7 @@
+(block container_wireguard
+    (blockinherit container)
+    (allow process process ( capability ( net_admin ))) 
+    
+    (allow process container_wireguard.process ( netlink_route_socket ( nlmsg_write )))
+
+)

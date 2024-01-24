@@ -1,0 +1,25 @@
+(block adguardhome
+    (blockinherit container)
+    (blockinherit restricted_net_container)
+    (allow process process ( capability ( net_bind_service ))) 
+
+    (allow process dns_port_t ( tcp_socket (  name_bind ))) 
+    (allow process dns_port_t ( udp_socket (  name_bind ))) 
+    (allow process dhcpd_port_t ( udp_socket (  name_bind ))) 
+    (allow process dhcpc_port_t ( udp_socket (  name_bind ))) 
+    (allow process http_port_t ( tcp_socket (  name_bind ))) 
+    (allow process http_port_t ( tcp_socket (  name_bind ))) 
+    (allow process reserved_port_t ( udp_socket (  name_bind ))) 
+    (allow process hi_reserved_port_t ( udp_socket (  name_bind )))
+    (allow process ntop_port_t ( tcp_socket (  name_bind ))) 
+    (allow process ntop_port_t ( udp_socket (  name_bind ))) 
+    (allow process unreserved_port_t ( tcp_socket (  name_bind ))) 
+    (allow process unreserved_port_t ( udp_socket (  name_bind ))) 
+
+    (allow process port_type ( tcp_socket ( name_connect recv_msg send_msg )))
+    (allow process port_type ( udp_socket ( recv_msg send_msg )))
+
+    (allow process cert_t ( dir ( watch getattr open read search ))) 
+    (allow process cert_t ( file ( watch getattr open read ))) 
+    (allow process cert_t ( lnk_file ( read )))
+)
