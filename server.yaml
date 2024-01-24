@@ -8,156 +8,211 @@ repos:
   - fedora-39-updates
 
 packages:
-  - NetworkManager-bluetooth
-  - NetworkManager-l2tp
-  - NetworkManager-libreswan
-  - NetworkManager-openconnect
-  - NetworkManager-vpnc
-  - NetworkManager-wifi
-  - abattis-cantarell-fonts
-  - acl
-  - alsa-sof-firmware
-  - apcupsd
-  - appstream-data
-  - attr
-  - bash-color-prompt
-  - bat
-  - bear
-  - bind-utils
+  # devel
   - boost-devel
-  - bootc
-  - borgbackup
-  - buildah
-  - certbot
   - checksec
-  - chrony
-  - cifs-utils
-  - cifs-utils-info
   - clang
   - clang-tools-extra
   - cmake
   - cmake-data
+  - copr-cli
+  - eigen3-devel
+  - gcc-gdb-plugin
+  - gcc-gfortran
+  - gdb
+  - gsl-devel
+  - lhapdf-devel
+  - libXext-devel
+  - libXft-devel
+  - libXpm-devel
+  - libnsl2-devel
+  - libasan
+  - libtool
+  - libubsan
+  - liburing-devel
+  - strace
+  - log4cpp-devel
+  - ninja-build
+  - openblas-devel
+  - openssl-devel
+  - pythia8-devel
+  - rust2rpm
+  - bear
+  - perf
+  - tbb-devel
+  - git
+  - perl-Git
+  - ltrace
+  - valgrind
+  - patchutils
+
+  # system management & base functions
+  - NetworkManager
+  - NetworkManager-wifi
+  - acl
+  - attr
+  - bind-utils
+  - chrony
+  - bootc
   - cockpit
   - cockpit-file-sharing
   - cockpit-kdump
   - cockpit-machines
   - cockpit-navigator
-  - cockpit-pcp
   - cockpit-podman
   - cockpit-selinux
+  - dhcp-client
+  - efibootmgr
+  - firewalld
+  - grub2-tools-efi
+  - grub2-tools-extra
+  - hdparm
+  - ipmitool
+  - irqbalance
+  - kernel-tools
+  - numactl
+  - nvme-cli
+  - radvd
+  - smartmontools
+  - shim-x64
+  - setserial
+  - setools-console
+  - sssd-kcm
+  - rpm-ostree
+  - sudo
+  - sudo-python-plugin
+  - usb_modeswitch
+  - usb_modeswitch-data
+  - iputils
+  - kernel
+  - kernel-modules-extra
+  - linux-firmware
+  - nss-mdns
+  - nss-altfiles
+  - openssh-server
+  - openssh-clients
+  - passwd
+  - shadow-utils
+  - selinux-policy-targeted
+  - sssd
+  - sssd-common
+
+  # useful tools
+  - which
+  - wget
+  - rsync
+  - lsof
+  - mtr
+  - pinfo
   - compsize
   - conntrack-tools
-  - copr-cli
-  - default-editor
-  - dhcp-client
-  - dos2unix
-  - dracut-config-rescue
-  - efibootmgr
-  - eigen3-devel
-  - firewalld
-  - flexiblas-openblas-serial
-  - flexiblas-openblas-serial64
-  - flexiblas-openblas-threads
-  - flexiblas-openblas-threads64
+  - borgbackup
   - fpaste
-  - fwupd
-  - fwupd-plugin-flashrom
-  - fwupd-plugin-modem-manager
-  - fwupd-plugin-uefi-capsule-data
-  - fzf
-  - gawk-all-langpacks
-  - gcc-gdb-plugin
-  - gcc-gfortran
-  - gdb
+  - opensc
   - ghostscript
   - ghostscript-tools-fonts
   - ghostscript-tools-printing
-  - git
-  - perl-Git
+  - fzf
   - glances
-  - gnome-keyring
-  - grub2-tools-efi
-  - grub2-tools-extra
-  - gsl-devel
-  - gstreamer1-plugins-bad-free-libs
-  - hdparm
+  - bat
   - htop
-  - hunspell-en
   - iotop
   - iperf3
-  - ipmitool
   - iptraf-ng
-  - iptstate
-  - irqbalance
-  - iwlegacy-firmware
-  - iwlwifi-dvm-firmware
-  - iwlwifi-mvm-firmware
   - jwhois
-  - kernel
-  - kernel
-  - kernel
-  - kernel-modules-extra
-  - kernel-modules-extra
-  - kernel-modules-extra
-  - kernel-tools
-  - langpacks-zh_CN
-  - lhapdf-devel
-  - libXext-devel
-  - libXft-devel
-  - libXpm-devel
-  - libasan
-  - libdovi
-  - libertas-firmware
-  - libnsl2-devel
-  - libtool
-  - libubsan
-  - liburing-devel
   - lm_sensors
-  - log4cpp-devel
   - lsof
-  - ltrace
-  - man-pages
-  - man-pages-zh-CN
   - mcelog
   - microcode_ctl
   - mtr
   - net-tools
-  - nginx-mod-stream
-  - ninja-build
   - nmap
+  - pandoc
+  - pciutils
+  - powertop
+  - rclone
+  - softnet-stat
+  - stress
+  - targetcli
+  - tcpdump
+  - time
+  - tmux
+  - toolbox
+  - traceroute
+  - tree
+  - udica
+  - whois
+  - unar
+  - usbutils
+  - vim-minimal
+  - waypipe
+  - whois
+  - wireguard-tools
+  - wol
+  - dnsmasq
+  - curl
+  - libcurl
+  - less
+
+  # container & VM
+  - podman-docker
+  - podman-plugins
+  - podman 
+  - skopeo
+  - buildah
+  - qemu-kvm
+  - systemd-container
+  # fs tools/storage
+  - nfs-utils
+  - cifs-utils
+  - cifs-utils-info
   - ntfs2btrfs
-  - numactl
-  - nvme-cli
-  - openblas-devel
+  - samba-client
+  - ntfs-3g
+  - ntfsprogs
+  - exfatprogs
+  - f2fs-tools
+  - xfsprogs
+  - mdadm
+  - lvm2
+  - btrfs-progs
+  - cockpit-storaged
+
+  # other 
+  - flexiblas-openblas-serial
+  - flexiblas-openblas-serial64
+  - flexiblas-openblas-threads
+  - flexiblas-openblas-threads64
+  - default-editor
+  - bash-completion
+  - bash-color-prompt
+  - langpacks-zh_CN
+  - man-pages-zh-CN
+  - man-pages
+  - man-db
   - opensc
   - openssh-server
-  - openssl-devel
-  - p7zip
-  - pandoc
   - passwdqc
-  - patchutils
-  - pciutils
-  - perf
   - perl-FindBin
   - perl-Unicode-Normalize
   - perl-YAML-Tiny
   - perl-sigtrap
-  - pipewire-alsa
-  - pipewire-pulseaudio
   - plymouth
   - plymouth-scripts
-  - podman-docker
-  - podman-plugins
-  - powertop
-  - pythia8-devel
-  - python3-certbot-dns-cloudflare
-  - python3-pwntools
-  - python3-rangehttpserver
+  - systemd-oomd-defaults
+  - rootfiles
+  - tpm2-pkcs11
+  - tpm2-pkcs11-tools
+  - words
+  - xorg-x11-xauth
+  - zram-generator-defaults
+  - zsh
+  - distribution-gpg-keys
+  - glibc-all-langpacks
+  - plymouth-system-theme
+
+  # HEP
   - python3-root
-  - qemu-kvm
-  - radvd
-  - rclone
-  - remove-retired-packages
   - root-genvector
   - root-geom
   - root-gui-webgui6
@@ -170,49 +225,17 @@ packages:
   - root-spectrum
   - root-tutorial
   - root-unfold
-  - rootfiles
-  - rpm-ostree
-  - rust2rpm
-  - samba-client
-  - setools-console
-  - setserial
-  - shim-x64
-  - smartmontools
-  - softnet-stat
-  - sssd-kcm
-  - strace
-  - stress
-  - sudo
-  - sudo-python-plugin
-  - systemd-oomd-defaults
-  - systemd-container
-  - targetcli
-  - tbb-devel
-  - tcpdump
-  - time
-  - tmux
-  - toolbox
-  - tpm2-pkcs11
-  - tpm2-pkcs11-tools
-  - traceroute
-  - tree
-  - udica
-  - unar
-  - usb_modeswitch
-  - usb_modeswitch-data
-  - usbutils
-  - valgrind
-  - vim-minimal
-  - waypipe
-  - whois
-  - wireguard-tools
-  - wol
-  - words
-  - xorg-x11-xauth
   - xrootd-client
   - xrootd-voms
-  - zram-generator-defaults
-  - zsh
+
+
+exclude-packages:
+  - firefox
+  - pipewire
+  - pipewire-utils
+  - qt5-qtbase
+  - qt5-qtbase-common
+  - systemd-resolved
 
 postprocess:
   - |
@@ -222,4 +245,45 @@ postprocess:
     echo "root" | passwd --stdin root
     mkdir -p /etc/ssh/sshd_config.d
     echo "PasswordAuthentication no" > /etc/ssh/sshd_config.d/99-password-authentication.conf
-    
+    # selinux modification
+    semanage fcontext -a -f a -t user_home_t -r 's0' '/media/storage(/.*)?'
+    semodule -i /etc/cils/*.cil /usr/share/udica/templates/{base_container.cil,net_container.cil}
+    rm -rf /etc/cils
+    # Services
+    systemctl enable cockpit.socket
+    systemctl disable sshd
+    systemctl enable sshd.socket
+    # subuid for containers
+    echo containers:2147483647:2147483648 > /etc/subuid
+    echo containers:2147483647:2147483648 > /etc/subgid
+
+add-files:
+  [
+    ["cils/adguardhome.cil", "/etc/cils/adguardhome.cil"],
+    [
+      "cils/cloudflare_with_socket_access.cil",
+      "/etc/cils/cloudflare_with_socket_access.cil",
+    ],
+    ["cils/comiclib.cil", "/etc/cils/comiclib.cil"],
+    ["cils/container_caddy.cil", "/etc/cils/container_caddy.cil"],
+    ["cils/container_hath.cil", "/etc/cils/container_hath.cil"],
+    [
+      "cils/container_rohome_allbind.cil",
+      "/etc/cils/container_rohome_allbind.cil",
+    ],
+    [
+      "cils/container_rwhome_allbind.cil",
+      "/etc/cils/container_rwhome_allbind.cil",
+    ],
+    ["cils/container_wireguard.cil", "/etc/cils/container_wireguard.cil"],
+    ["etc/containers/containers.conf", "/etc/containers/containers.conf"],
+    ["etc/containers/storage.conf", "/etc/containers/storage.conf"],
+    [
+      "etc/containers/networks/podman.json",
+      "/etc/containers/networks/podman.json",
+    ],
+    [
+      "etc/systemd/system.conf.d/accounting.conf",
+      "/etc/systemd/system.conf.d/accounting.conf",
+    ],
+  ]

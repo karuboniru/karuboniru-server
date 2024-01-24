@@ -7,7 +7,9 @@ mutate-os-release: "39"
 container-cmd:
   - /usr/bin/bash
 
-include: fedora-common-ostree-pkgs.yaml
+# don't include the default package list as 
+# this for GUI systems
+# include: fedora-common-ostree-pkgs.yaml
 
 # See https://github.com/coreos/bootupd
 # TODO: Disabled until we use use unified-core or native container flow
@@ -21,11 +23,7 @@ packages:
   - git-core
   # Explicitely add Git docs
   - git-core-doc
-  - lvm2
   - rpm-ostree
-  # Required for compatibility with old bootloaders until we have bootupd
-  # See https://github.com/fedora-silverblue/issue-tracker/issues/120
-  - ostree-grub2
   # Container management
   - buildah
   - podman
@@ -33,12 +31,6 @@ packages:
   - toolbox
   # Provides terminal tools like clear, reset, tput, and tset
   - ncurses
-  # Flatpak support
-  - flatpak
-  - xdg-desktop-portal
-  # HFS filesystem tools for Apple hardware
-  # See https://github.com/projectatomic/rpm-ostree/issues/1380
-  - hfsplus-tools
   # Contains default ostree remote config to be used on client's
   # system for fetching ostree update
   - fedora-repos-ostree

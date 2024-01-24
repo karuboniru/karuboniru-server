@@ -41,7 +41,7 @@ jobs:
           tag: ${{ github.ref_name }}
           composefile: server.yaml
         run: |
-          dnf -y install rpm-ostree skopeo selinux-policy-targeted
+          dnf -y install rpm-ostree skopeo selinux-policy-targeted --enablerepo=updates-testing
           skopeo login -u $username -p $password $registry
           mkdir -p repo cache
           ostree init --repo=repo --mode=archive
