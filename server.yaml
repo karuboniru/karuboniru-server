@@ -246,6 +246,7 @@ postprocess:
     semanage fcontext -a -f a -t user_home_t -r 's0' '/media/storage(/.*)?'
     semodule -i /etc/cils/*.cil /usr/share/udica/templates/{base_container.cil,net_container.cil}
     rm -rf /etc/cils
+    setsebool -P nis_enabled 1
     # Services
     systemctl enable cockpit.socket
     systemctl disable sshd
