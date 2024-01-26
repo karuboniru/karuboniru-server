@@ -225,6 +225,9 @@ packages:
   - xrootd-client
   - xrootd-voms
 
+  # identity file
+  - fedora-release-identity-server
+
 
 exclude-packages:
   - firefox
