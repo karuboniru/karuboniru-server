@@ -1,0 +1,2 @@
+include: fedora-iot-base.yaml
+ref: fedora/rawhide/${basearch}/updates/iot
