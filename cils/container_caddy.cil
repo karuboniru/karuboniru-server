@@ -2,9 +2,6 @@
     (blockinherit container)
     (blockinherit net_container)
     (allow process process ( capability ( net_bind_service ))) 
-
-    (allow process user_home_t ( dir ( watch getattr ioctl lock open read search ))) 
-    (allow process user_home_t ( file ( watch getattr ioctl lock open read ))) 
    
     (allow process var_run_t ( sock_file ( write )))
     (allow process cockpit_ws_t ( unix_stream_socket ( connectto )))
