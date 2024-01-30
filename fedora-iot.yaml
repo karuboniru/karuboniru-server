@@ -1,8 +1,4 @@
 include: fedora-iot-base.yaml
 ref: fedora/rawhide/${basearch}/iot
-rojig:
-  name: fedora-iot-base
-  summary: "Fedora base image for IoT"
-  license: MIT
 repos:
 - fedora-40

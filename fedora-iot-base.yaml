@@ -1,9 +1,4 @@
----
 ref: fedora/rawhide/${basearch}/iot
-rojig:
-  name: fedora-iot
-  summary: "Fedora IoT image"
-  license: MIT
 repos: []
 selinux: true
 ima: true
@@ -82,6 +77,7 @@ packages:
 - basesystem
 - bash
 - bash-completion
+- bootupd
 - brcmfmac-firmware
 - chrony
 - clevis
