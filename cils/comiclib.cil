@@ -1,7 +1,8 @@
 (block comiclib
     (blockinherit container)
 
-
     (allow process user_home_t ( dir ( watch getattr ioctl lock open read search ))) 
     (allow process user_home_t ( file ( watch getattr ioctl lock open read ))) 
+
+    (dontaudit process node_t ( tcp_socket ( node_bind ) ) )
 )

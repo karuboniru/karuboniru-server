@@ -4,4 +4,5 @@
     
     (allow process container_wireguard.process ( netlink_route_socket ( nlmsg_write )))
 
+    (dontaudit process cgroup_t (dir (write) ))
 )
