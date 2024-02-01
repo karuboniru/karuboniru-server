@@ -267,6 +267,7 @@ add-files:
     ],
     ["cils/comiclib.cil", "/etc/cils/comiclib.cil"],
     ["cils/container_caddy.cil", "/etc/cils/container_caddy.cil"],
+    ["cils/container_alist.cil", "/etc/cils/container_alist.cil"],
     ["cils/container_hath.cil", "/etc/cils/container_hath.cil"],
     [
       "cils/container_rohome_allbind.cil",
