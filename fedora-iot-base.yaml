@@ -77,7 +77,6 @@ packages:
 - basesystem
 - bash
 - bash-completion
-- bootupd
 - brcmfmac-firmware
 - chrony
 - clevis
