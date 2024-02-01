@@ -242,6 +242,7 @@ exclude-packages:
 
 postprocess:
   - |
+    set -xeuo pipefail
     # Enable root login with simple password, to 
     # make sure user can get access after applying
     # image
