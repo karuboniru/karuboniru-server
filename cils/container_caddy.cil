@@ -5,4 +5,6 @@
    
     (allow process var_run_t ( sock_file ( write )))
     (allow process cockpit_ws_t ( unix_stream_socket ( connectto )))
+    (allow process container_alist.process ( unix_stream_socket ( connectto )))
+    (allow process comiclib.process ( unix_stream_socket ( connectto )))
 )
