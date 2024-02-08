@@ -182,6 +182,7 @@ packages-x86_64:
 default_target: multi-user.target
 units:
 - NetworkManager.service
+- fedora-iot-config-remote-fix.service
 - firewalld.service
 - sshd.service
 - greenboot-grub2-set-counter.service
