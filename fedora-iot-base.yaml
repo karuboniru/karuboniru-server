@@ -135,7 +135,6 @@ packages:
 - parsec
 - pinentry
 - podman
-- podman-plugins
 - policycoreutils
 - policycoreutils-python-utils
 - polkit
