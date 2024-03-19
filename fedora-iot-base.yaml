@@ -133,6 +133,8 @@ packages:
 - openssl
 - openssh-clients
 - openssh-server
+- passt
+- passt-selinux
 - parsec
 - pinentry
 - podman
