@@ -1,0 +1,7 @@
+(block container_rwhome_allbind
+    (blockinherit container)
+    (blockinherit net_container)
+
+    (allow process user_home_t ( dir (  watch add_name create getattr ioctl lock open read remove_name rmdir search setattr write ))) 
+    (allow process user_home_t ( file ( watch append create getattr ioctl lock map open read rename setattr unlink write ))) 
+)
