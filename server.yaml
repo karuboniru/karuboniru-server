@@ -1,5 +1,6 @@
 include:
   - fedora-common-ostree.yaml
+  - root-pythia6.yaml
 ref: fedora/40/${basearch}/karuboniru-server
 
 repos:
@@ -207,23 +208,6 @@ packages:
   - distribution-gpg-keys
   - glibc-all-langpacks
   - plymouth-system-theme
-
-  # HEP
-  - python3-root
-  - root-genvector
-  - root-geom
-  - root-gui-webgui6
-  - root-hist-factory
-  - root-minuit2
-  - root-montecarlo-pythia8
-  - root-netx
-  - root-roofit-more
-  - root-smatrix
-  - root-spectrum
-  - root-tutorial
-  - root-unfold
-  - xrootd-client
-  - xrootd-voms
 
   # identity file
   - fedora-release-identity-server
