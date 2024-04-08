@@ -166,6 +166,7 @@ packages:
   - cifs-utils-info
   - ntfs2btrfs
   - samba-client
+  - samba
   - ntfs-3g
   - ntfsprogs
   - exfatprogs
