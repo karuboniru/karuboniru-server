@@ -184,6 +184,7 @@ packages-x86_64:
 default_target: multi-user.target
 units:
 - NetworkManager.service
+- fdo-client-linuxapp.service
 - fedora-iot-config-remote-fix.service
 - firewalld.service
 - sshd.service
