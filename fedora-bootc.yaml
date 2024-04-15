@@ -1,0 +1,15 @@
+releasever: rawhide
+variables:
+  distro: "fedora"
+
+repos:
+  - rawhide
+
+metadata:
+  name: fedora-bootc
+  summary: Fedora base bootc image
+
+include:
+  - fedora-bootc-base/manifest.yaml
+  - fedora-bootc-base/kernel.yaml
+

@@ -1,0 +1,10 @@
+# Configuration for bootc
+postprocess:
+  # ext4 is our default filesystem in iot
+  - |
+    #!/usr/bin/env bash
+    mkdir -p /usr/lib/bootc/install/
+    cat > /usr/lib/bootc/install/20-default-root.toml << EOF
+    [install]
+    root-fs-type = "ext4"
+    EOF
