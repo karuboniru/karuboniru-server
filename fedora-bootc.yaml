@@ -3,7 +3,7 @@ variables:
   distro: "fedora"
 
 repos:
-  - rawhide
+  - fedora-rawhide
 
 metadata:
   name: fedora-bootc
