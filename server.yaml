@@ -236,6 +236,7 @@ postprocess:
     semodule -i /etc/cils/*.cil /usr/share/udica/templates/{base_container.cil,net_container.cil}
     rm -rf /etc/cils
     setsebool -P nis_enabled 1
+    setsebool -P samba_enable_home_dirs 1
     # Services
     systemctl enable cockpit.socket
     systemctl disable sshd
