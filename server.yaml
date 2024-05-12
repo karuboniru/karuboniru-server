@@ -265,6 +265,7 @@ add-files:
       "/etc/cils/container_rwhome_allbind.cil",
     ],
     ["cils/container_wireguard.cil", "/etc/cils/container_wireguard.cil"],
+    ["cils/container_jellyfin.cil", "/etc/cils/container_jellyfin.cil"],
     ["etc/containers/containers.conf", "/etc/containers/containers.conf"],
     ["etc/containers/storage.conf", "/etc/containers/storage.conf"],
     [
