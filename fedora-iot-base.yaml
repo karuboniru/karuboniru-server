@@ -94,6 +94,8 @@ packages:
 - cryptsetup
 - curl
 - dbus-parsec
+- dnf5
+- dnf5-plugins
 - dnsmasq
 - dosfstools
 - dracut-config-generic
