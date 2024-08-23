@@ -213,6 +213,13 @@ packages:
   # identity file
   - fedora-release-identity-server
 
+  # fedora
+  - koji
+  - fedpkg
+  - copr-cli
+
+  # Valor
+  - gsl-devel
 
 exclude-packages:
   - firefox
