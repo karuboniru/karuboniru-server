@@ -1,3 +1,7 @@
+# KEEP THIS IN SYNC WITH https://github.com/coreos/fedora-coreos-config/blob/testing-devel/manifests/bootupd.yaml
+# See also: https://pagure.io/workstation-ostree-config/blob/main/f/bootupd.yaml
+#
+#Integration with https://github.com/coreos/bootupd
 packages:
   - bootupd
 
