@@ -1,0 +1,289 @@
+variables:
+  bootable_container: true
+  variant: "server"
+include:
+  - common.yaml
+  - root-pythia6.yaml
+
+ref: fedora/41/${basearch}/karuboniru-server
+
+repos:
+  - fedora-41
+  - fedora-41-updates
+
+packages:
+  # devel
+  - boost-devel
+  - checksec
+  - clang
+  - clang-tools-extra
+  - cmake
+  - cmake-data
+  - copr-cli
+  - eigen3-devel
+  - gcc-gdb-plugin
+  - gcc-gfortran
+  - gdb
+  - gsl-devel
+  - lhapdf-devel
+  - libXext-devel
+  - libXft-devel
+  - libXpm-devel
+  - libnsl2-devel
+  - libasan
+  - libtool
+  - libubsan
+  - liburing-devel
+  - strace
+  - log4cpp-devel
+  - ninja-build
+  - openblas-devel
+  - openssl-devel
+  - pythia8-devel
+  - rust2rpm
+  - bear
+  - perf
+  - tbb-devel
+  - git
+  - perl-Git
+  - ltrace
+  - valgrind
+  - patchutils
+
+  # system management & base functions
+  - NetworkManager
+  - NetworkManager-wifi
+  - acl
+  - attr
+  - bind-utils
+  - chrony
+  - bootc
+  - cockpit
+  - cockpit-kdump
+  - cockpit-machines
+  - cockpit-navigator
+  - cockpit-podman
+  - cockpit-selinux
+  - dhcp-client
+  - efibootmgr
+  - firewalld
+  - grub2-tools-efi
+  - grub2-tools-extra
+  - hdparm
+  - ipmitool
+  - irqbalance
+  - kernel-tools
+  - numactl
+  - nvme-cli
+  - radvd
+  - smartmontools
+  - shim-x64
+  - setserial
+  - setools-console
+  - sssd-kcm
+  - rpm-ostree
+  - sudo
+  - sudo-python-plugin
+  - usb_modeswitch
+  - usb_modeswitch-data
+  - iputils
+  - kernel
+  - kernel-modules-extra
+  - linux-firmware
+  - nss-mdns
+  - nss-altfiles
+  - openssh-server
+  - openssh-clients
+  - passwd
+  - shadow-utils
+  - selinux-policy-targeted
+  - sssd
+  - sssd-common
+
+  # useful tools
+  - which
+  - wget
+  - rsync
+  - lsof
+  - mtr
+  - pinfo
+  - compsize
+  - conntrack-tools
+  - borgbackup
+  - fpaste
+  - opensc
+  - ghostscript
+  - ghostscript-tools-fonts
+  - ghostscript-tools-printing
+  - fzf
+  - glances
+  - bat
+  - htop
+  - iotop
+  - iperf3
+  - iptraf-ng
+  - jwhois
+  - lm_sensors
+  - lsof
+  - mcelog
+  - microcode_ctl
+  - mtr
+  - net-tools
+  - nmap
+  - pandoc
+  - pciutils
+  - powertop
+  - rclone
+  - softnet-stat
+  - stress
+  - targetcli
+  - tcpdump
+  - time
+  - tmux
+  - toolbox
+  - traceroute
+  - tree
+  - udica
+  - whois
+  - unar
+  - usbutils
+  - vim-minimal
+  - waypipe
+  - whois
+  - wireguard-tools
+  - wol
+  - dnsmasq
+  - curl
+  - libcurl
+  - less
+
+  # container & VM
+  - podman-docker
+  - podman 
+  - skopeo
+  - buildah
+  - qemu-kvm
+  - systemd-container
+  # fs tools/storage
+  - nfs-utils
+  - cifs-utils
+  - cifs-utils-info
+  - ntfs2btrfs
+  - samba-client
+  - samba
+  - ntfs-3g
+  - ntfsprogs
+  - exfatprogs
+  - f2fs-tools
+  - xfsprogs
+  - mdadm
+  - lvm2
+  - btrfs-progs
+  - cockpit-storaged
+
+  # other 
+  - flexiblas-openblas-serial
+  - flexiblas-openblas-serial64
+  - flexiblas-openblas-threads
+  - flexiblas-openblas-threads64
+  - default-editor
+  - bash-completion
+  - bash-color-prompt
+  - langpacks-zh_CN
+  - man-pages-zh-CN
+  - man-pages
+  - man-db
+  - opensc
+  - openssh-server
+  - passwdqc
+  - perl-FindBin
+  - perl-Unicode-Normalize
+  - perl-YAML-Tiny
+  - perl-sigtrap
+  - plymouth
+  - plymouth-scripts
+  - systemd-oomd-defaults
+  - rootfiles
+  - tpm2-pkcs11
+  - tpm2-pkcs11-tools
+  - words
+  - xorg-x11-xauth
+  - zram-generator-defaults
+  - zsh
+  - distribution-gpg-keys
+  - glibc-all-langpacks
+  - plymouth-system-theme
+
+  # identity file
+  - fedora-release-identity-server
+
+  # fedora
+  - koji
+  - fedpkg
+  - copr-cli
+
+  # Valor
+  - gsl-devel
+
+exclude-packages:
+  - firefox
+  - pipewire
+  - pipewire-utils
+  - qt5-qtbase
+  - qt5-qtbase-common
+
+postprocess:
+  - |
+    set -xeuo pipefail
+    # Enable root login with simple password, to 
+    # make sure user can get access after applying
+    # image
+    echo "root" | passwd --stdin root
+    mkdir -p /etc/ssh/sshd_config.d
+    echo "PasswordAuthentication no" > /etc/ssh/sshd_config.d/99-password-authentication.conf
+    # selinux modification
+    semanage fcontext -a -f a -t user_home_t -r 's0' '/media/storage(/.*)?'
+    semodule -i /etc/cils/*.cil /usr/share/udica/templates/{base_container.cil,net_container.cil}
+    rm -rf /etc/cils
+    setsebool -P nis_enabled 1
+    setsebool -P samba_enable_home_dirs 1
+    # Services
+    systemctl enable cockpit.socket
+    systemctl disable sshd
+    systemctl enable sshd.socket
+    # subuid for containers
+    echo containers:2147483647:2147483648 > /etc/subuid
+    echo containers:2147483647:2147483648 > /etc/subgid
+
+add-files:
+  [
+    ["cils/adguardhome.cil", "/etc/cils/adguardhome.cil"],
+    [
+      "cils/cloudflare_with_socket_access.cil",
+      "/etc/cils/cloudflare_with_socket_access.cil",
+    ],
+    ["cils/comiclib.cil", "/etc/cils/comiclib.cil"],
+    ["cils/container_caddy.cil", "/etc/cils/container_caddy.cil"],
+    ["cils/container_alist.cil", "/etc/cils/container_alist.cil"],
+    ["cils/container_hath.cil", "/etc/cils/container_hath.cil"],
+    [
+      "cils/container_rohome_allbind.cil",
+      "/etc/cils/container_rohome_allbind.cil",
+    ],
+    [
+      "cils/container_rwhome_allbind.cil",
+      "/etc/cils/container_rwhome_allbind.cil",
+    ],
+    ["cils/container_wireguard.cil", "/etc/cils/container_wireguard.cil"],
+    ["cils/container_jellyfin.cil", "/etc/cils/container_jellyfin.cil"],
+    ["etc/containers/containers.conf", "/etc/containers/containers.conf"],
+    ["etc/containers/storage.conf", "/etc/containers/storage.conf"],
+    [
+      "etc/containers/networks/podman.json",
+      "/etc/containers/networks/podman.json",
+    ],
+    [
+      "etc/systemd/system.conf.d/accounting.conf",
+      "/etc/systemd/system.conf.d/accounting.conf",
+    ],
+  ]
