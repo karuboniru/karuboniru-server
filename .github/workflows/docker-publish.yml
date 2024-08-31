@@ -1,0 +1,53 @@
+name: Build Ostree Container Image
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+on:
+  schedule:
+    - cron: '00 9 * * 1'
+  push:
+    branches: [ '*' ]
+
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: 
+      image: fedora:latest
+      options: --privileged
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Build
+        env:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}    
+          image: ${{ env.IMAGE_NAME }}
+          tag: ${{ github.ref_name }}
+          composefile: server.yaml
+        run: |
+          dnf -y install rpm-ostree skopeo selinux-policy-targeted --enablerepo=updates-testing
+          skopeo login -u $username -p $password $registry
+          mkdir -p repo cache
+          ostree init --repo=repo --mode=archive
+          rpm-ostree compose image --initialize-mode=if-not-exists \
+            --format registry --layer-repo repo --cachedir=cache \
+            $composefile \
+            $registry/$image:$tag
+
+        
