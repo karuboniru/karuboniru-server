@@ -17,6 +17,11 @@ packages:
   - checksec
   - clang
   - clang-tools-extra
+  - llvm
+  - clang
+  - lldb
+  - gcc
+  - gcc-c++
   - cmake
   - cmake-data
   - copr-cli
