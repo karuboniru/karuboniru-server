@@ -20,6 +20,7 @@ packages:
   - llvm
   - clang
   - lldb
+  - lld
   - gcc
   - gcc-c++
   - cmake
