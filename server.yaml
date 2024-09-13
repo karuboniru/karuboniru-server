@@ -10,6 +10,7 @@ ref: fedora/41/${basearch}/karuboniru-server
 repos:
   - fedora-41
   - fedora-41-updates
+  - llvm-snapshot
 
 packages:
   # devel
