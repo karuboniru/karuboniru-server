@@ -99,7 +99,6 @@ packages:
 - dbus-parsec
 - dnf5
 - dnf5-plugins
-- dnsmasq
 - dosfstools
 - dracut-config-generic
 - dracut-network
