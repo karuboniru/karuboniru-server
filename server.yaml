@@ -18,6 +18,7 @@ packages:
   - checksec
   - clang
   - clang-tools-extra
+  - clang-analyzer
   - llvm
   - clang
   - lldb
