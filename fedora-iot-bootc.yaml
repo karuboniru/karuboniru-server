@@ -1,13 +1,13 @@
 releasever: rawhide
 variables:
-  distro: "fedora"
+  distro: "fedora-iot"
 
 repos:
   - fedora-rawhide
 
 metadata:
-  name: fedora-bootc
-  summary: Fedora base bootc image
+  name: fedora-iot-bootc-base
+  summary: Fedora IoT bootc base image
 
 include:
   - fedora-bootc-base/manifest.yaml

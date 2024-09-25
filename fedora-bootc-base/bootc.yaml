@@ -2,6 +2,10 @@
 packages:
  - systemd
  - bootc
+ # bootc pulls in podman, which pulls in containers-common, which wants
+ # `iptables`. Currently that pulls in iptables-legacy. Let's explicitly name
+ # iptables-nft instead to satisfy it.
+ - iptables-nft
  # Required by bootc install today, though we'll likely switch bootc to use a Rust crate instead of sgdisk
  - gdisk xfsprogs e2fsprogs dosfstools
 

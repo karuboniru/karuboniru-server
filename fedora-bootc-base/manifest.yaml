@@ -44,19 +44,18 @@ remove-from-packages:
   # We don't want auto-generated mount units. See also
   # https://github.com/systemd/systemd/issues/13099
   - [systemd-udev, /usr/lib/systemd/system-generators/systemd-gpt-auto-generator]
-  # Drop some buggy sysusers fragments which do not match static IDs allocation:
-  # https://bugzilla.redhat.com/show_bug.cgi?id=2105177
-  - [dbus-common, /usr/lib/sysusers.d/dbus.conf]
 
 include:
   - bootc.yaml
+  - bootupd.yaml
   - ostree.yaml
-  - bootc-config.yaml
   - initramfs.yaml
-  - autoupdates.yaml
   - basic-fixes.yaml
+  - iot.yaml
 
 packages:
+  # needed for building derived container images
+  - dnf5
   # Even in tier-0, we have this.  If you don't want SELinux today, you'll need
   # to build a custom image.
   - selinux-policy-targeted
@@ -64,8 +63,3 @@ packages:
   - container-selinux
   # Needed for tpm2 bound luks
   - tpm2-tools
-
-# See https://github.com/coreos/bootupd
-arch-include:
-  x86_64: bootupd.yaml
-  aarch64: bootupd.yaml
