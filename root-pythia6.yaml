@@ -38,6 +38,7 @@ repo-packages:
       - root-smatrix
       - pythia6
       - pythia6-devel
+      - root-minuit2
 
 repos:
   - pythia6
