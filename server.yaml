@@ -24,6 +24,7 @@ packages:
   - clang
   - lldb
   - lld
+  - mold
   - gcc
   - gcc-c++
   - cmake
