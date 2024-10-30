@@ -190,6 +190,7 @@ packages:
   - lvm2
   - btrfs-progs
   - cockpit-storaged
+  - btrbk
 
   # other 
   - flexiblas-openblas-serial
