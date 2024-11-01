@@ -236,6 +236,8 @@ packages:
   # Valor
   - gsl-devel
 
+  - hdparm
+
 exclude-packages:
   - firefox
   - pipewire
