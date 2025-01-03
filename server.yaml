@@ -10,8 +10,8 @@ ref: fedora/41/${basearch}/karuboniru-server
 repos:
   - fedora-41
   - fedora-41-updates
-  - llvm-snapshot
-  - llvm-snapshot-rundep
+  # - llvm-snapshot
+  # - llvm-snapshot-rundep
 
 packages:
   # devel
