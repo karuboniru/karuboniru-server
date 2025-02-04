@@ -1,2 +1,2 @@
 include: fedora-iot-base.yaml
-ref: fedora/rawhide/${basearch}/testing/iot
+ref: fedora/devel/${basearch}/testing/iot
