@@ -1,4 +1,4 @@
 include: fedora-iot-base.yaml
 ref: fedora/rawhide/${basearch}/iot
 repos:
-- fedora-42
+- fedora-43

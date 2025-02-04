@@ -9,8 +9,8 @@ ima: true
 tmp-is-dir: true
 recommends: false
 documentation: false
-automatic_version_prefix: '42'
-mutate-os-release: '42'
+automatic_version_prefix: '43'
+mutate-os-release: '43'
 initramfs-args:
 - "--no-hostonly"
 - "--add"
