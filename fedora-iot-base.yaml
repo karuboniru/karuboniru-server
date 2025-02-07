@@ -82,7 +82,6 @@ packages:
 - atheros-firmware
 - attr
 - authselect
-- basesystem
 - bash
 - bash-completion
 - bootc
@@ -110,6 +109,7 @@ packages:
 - efibootmgr
 - fdo-client
 - fdo-owner-cli
+- filesystem
 - firewalld
 - fwupd
 - fwupd-efi
