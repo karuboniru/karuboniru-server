@@ -190,6 +190,10 @@ packages:
   - lvm2
   - btrfs-progs
   - cockpit-storaged
+  - pcp
+  - pcp-conf
+  - pcp-pmda-libvirt
+  - pcp-pmda-lmsensors
   - btrbk
 
   # other 
