@@ -11,6 +11,8 @@ repos:
   - fedora-41
   - fedora-41-updates
   - ctk
+  - nvidia
+  - dummy
   # - llvm-snapshot
   # - llvm-snapshot-rundep
 
@@ -248,12 +250,27 @@ packages:
   - nvidia-container-toolkit
   - nvidia-container-toolkit-selinux
 
+  - nvidia-modprobe
+  - xorg-x11-drv-nvidia-libs
+  - nvidia-persistenced
+  - xorg-x11-drv-nvidia
+  - xorg-x11-drv-nvidia-cuda
+  - xorg-x11-drv-nvidia-power
+  - xorg-x11-drv-nvidia-kmodsrc
+  - xorg-x11-drv-nvidia-cuda-libs
+  - nvidia-settings
+
+  - kernel-devel
+  - dummy
+
 exclude-packages:
   - firefox
   - pipewire
   - pipewire-utils
   - qt5-qtbase
   - qt5-qtbase-common
+  - akmods
+  - akmod-nvidia
 
 postprocess:
   - |
@@ -277,6 +294,18 @@ postprocess:
     # subuid for containers
     echo containers:2147483647:2147483648 > /etc/subuid
     echo containers:2147483647:2147483648 > /etc/subgid
+
+    kmodsrc=$(realpath /usr/share/nvidia-kmod-*/*.tar.xz)
+    if [ -f $kmodsrc ]; then
+      kmodule_path=$(realpath /lib/modules/*)
+      kernel_uname=$(basename $kmodule_path)
+      mkdir -p /tmp/kmod-build
+      tar -xvf $kmodsrc -C /tmp/kmod-build
+      cd /tmp/kmod-build/kernel
+      make -O V=1 VERBOSE=1 CC='gcc -O2' LD=ld.bfd KERNEL_UNAME=${kernel_uname} modules
+      make -O V=1 VERBOSE=1 CC='gcc -O2' LD=ld.bfd KERNEL_UNAME=${kernel_uname} modules_install
+    fi
+
 
 add-files:
   [
