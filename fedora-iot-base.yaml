@@ -179,7 +179,6 @@ packages:
 - wireless-regdb
 - xfsprogs
 - xz
-- zezere-ignition
 - zram-generator
 - zram-generator-defaults
 packages-aarch64:
@@ -200,6 +199,7 @@ units:
 - fedora-iot-config-remote-fix.service
 - firewalld.service
 - sshd.service
+- systemd-firstboot.service
 - greenboot-grub2-set-counter.service
 - greenboot-grub2-set-success.service
 - greenboot-healthcheck.service
@@ -208,5 +208,3 @@ units:
 - greenboot-task-runner.service
 - parsec.service
 - dbus-parsec.service
-- zezere_ignition.timer
-- zezere_ignition_banner.service
