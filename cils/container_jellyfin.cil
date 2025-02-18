@@ -5,5 +5,7 @@
     (allow process user_home_t ( dir ( watch getattr ioctl lock open read search ))) 
     (allow process user_home_t ( file ( watch getattr ioctl lock open read ))) 
 
+    (allow process container_file_t ( chr_file ( map ))) 
+
     (allow process tmpfs_t (file (execute map)))
 )
