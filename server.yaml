@@ -173,6 +173,7 @@ packages:
   # container & VM
   - podman-docker
   - podman 
+  - podman-compose
   - skopeo
   - buildah
   - qemu-kvm
@@ -302,7 +303,7 @@ postprocess:
       mkdir -p /tmp/kmod-build
       tar -xvf $kmodsrc -C /tmp/kmod-build
       cd /tmp/kmod-build/kernel-open
-      make -O V=1 VERBOSE=1 CC='gcc -O2' LD=ld.bfd KERNEL_UNAME=${kernel_uname} modules
+      make -O V=1 VERBOSE=1 CC='gcc -O2' LD=ld.bfd KERNEL_UNAME=${kernel_uname} modules -j$(nproc)
       make -O V=1 VERBOSE=1 CC='gcc -O2' LD=ld.bfd KERNEL_UNAME=${kernel_uname} modules_install
     fi
 
