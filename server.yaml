@@ -307,6 +307,9 @@ postprocess:
       make -O V=1 VERBOSE=1 CC='gcc -O2' LD=ld.bfd KERNEL_UNAME=${kernel_uname} modules_install
     fi
 
+    # this break things, remove it
+    rm -rf /usr/lib/dracut/modules.d/95nfs
+
 
 add-files:
   [
