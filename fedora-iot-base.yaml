@@ -100,7 +100,6 @@ packages:
 - criu-libs
 - cryptsetup
 - curl
-- dbus-parsec
 - dnf5
 - dnf5-plugins
 - dosfstools
@@ -146,7 +145,6 @@ packages:
 - openssh-server
 - passt
 - passt-selinux
-- parsec
 - pinentry
 - podman
 - policycoreutils
@@ -206,5 +204,3 @@ units:
 - greenboot-rpm-ostree-grub2-check-fallback.service
 - greenboot-status.service
 - greenboot-task-runner.service
-- parsec.service
-- dbus-parsec.service
