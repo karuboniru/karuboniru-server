@@ -146,7 +146,6 @@ packages:
 - pinentry
 - podman
 - policycoreutils
-- policycoreutils-python-utils
 - polkit
 - procps-ng
 - realtek-firmware
