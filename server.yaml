@@ -260,6 +260,7 @@ packages:
   - xorg-x11-drv-nvidia-kmodsrc
   - xorg-x11-drv-nvidia-cuda-libs
   - nvidia-settings
+  - pcp-pmda-nvidia-gpu
 
   - kernel-devel
   - dummy
