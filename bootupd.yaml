@@ -1,7 +1,7 @@
 # KEEP THIS IN SYNC WITH https://github.com/coreos/fedora-coreos-config/blob/testing-devel/manifests/bootupd.yaml
 # See also: https://pagure.io/workstation-ostree-config/blob/main/f/bootupd.yaml
 #
-#Integration with https://github.com/coreos/bootupd
+# Integration with https://github.com/coreos/bootupd
 packages:
   - bootupd
 
@@ -12,7 +12,7 @@ postprocess:
 
     # Transforms /usr/lib/ostree-boot into a bootupd-compatible update payload
     /usr/bin/bootupctl backend generate-update-metadata
-  
+
     # Enable migration to a static GRUB config
     install -dm0755 /usr/lib/systemd/system/bootloader-update.service.d
     cat > /usr/lib/systemd/system/bootloader-update.service.d/migrate-static-grub-config.conf << 'EOF'
