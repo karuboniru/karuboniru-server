@@ -5,7 +5,6 @@ include:
 ref: fedora/rawhide/${basearch}/iot
 repos: []
 selinux: true
-ima: true
 tmp-is-dir: true
 recommends: false
 documentation: false
