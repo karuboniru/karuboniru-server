@@ -7,4 +7,11 @@ type=rpm-md
 gpgcheck=0
 repo_gpgcheck=0
 skip_if_unavailable=True
-	
+module_hotfixes=True
+
+[cudnn]
+name=cuda-rhel9-x86_64
+baseurl=file://./download
+enabled=1
+gpgcheck=0
+cost=2000
