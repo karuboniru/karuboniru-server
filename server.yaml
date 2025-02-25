@@ -13,6 +13,7 @@ repos:
   - ctk
   - nvidia
   - dummy
+  - cudnn
   # - llvm-snapshot
   # - llvm-snapshot-rundep
 
@@ -268,6 +269,8 @@ packages:
 
   - kernel-devel
   - dummy
+  - libcudnn9-cuda-12
+  - libcudnn9-devel-cuda-12
 
 exclude-packages:
   - firefox

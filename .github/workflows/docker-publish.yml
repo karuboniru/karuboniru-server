@@ -41,8 +41,13 @@ jobs:
           tag: ${{ github.ref_name }}
           composefile: server.yaml
         run: |
-          dnf -y install rpm-ostree skopeo selinux-policy-targeted --enablerepo=updates-testing
+          dnf -y install rpm-ostree skopeo createrepo_c dnf5 selinux-policy-targeted --enablerepo=updates-testing
           skopeo login -u $username -p $password $registry
+          mkdir -p download
+          cd download 
+          dnf5 --repofrompath=cudnn,https://developer.download.nvidia.com/compute/cuda/repos/rhel9/x86_64 --repo=cudnn download libcudnn9-cuda-12 libcudnn9-devel-cuda-12
+          createrepo_c .
+          cd ..
           mkdir -p repo cache
           ostree init --repo=repo --mode=archive
           rpm-ostree compose image --initialize-mode=if-not-exists \
