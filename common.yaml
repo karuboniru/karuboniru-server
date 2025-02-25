@@ -23,7 +23,6 @@ include:
 arch-include:
   x86_64:
     - initramfs-tpm-luks.yaml
-    - qemu-user-static-x86_64.yaml
   aarch64:
     - initramfs-tpm-luks.yaml
     - qemu-user-static-non-x86_64.yaml
@@ -142,10 +141,6 @@ exclude-packages:
   # Exclude Tk. We can not exclude Tcl as it is neeeded for usb_modeswitch
   - tk
   # Exclude QEMU. See: https://gitlab.com/fedora/ostree/sig/-/issues/58
-  - qemu-kvm
-  - qemu-kvm-core
-  - qemu-device-display-virtio-gpu
-  - qemu-device-display-virtio-vga
 
 postprocess:
   - |
