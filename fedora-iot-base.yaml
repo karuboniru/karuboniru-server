@@ -130,7 +130,6 @@ packages:
 - iwd
 - iwlwifi-mvm-firmware
 - kernel
-- kernel-tools
 - keyutils
 - less
 - libsss_sudo
