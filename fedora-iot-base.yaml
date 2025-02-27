@@ -2,6 +2,8 @@ include:
   - bootupd.yaml
   # Workaround for https://bugzilla.redhat.com/show_bug.cgi?id=2305291
   - grub2-workaround.yaml
+  # Enable composefs
+  - composefs.yaml
 ref: fedora/rawhide/${basearch}/iot
 repos: []
 selinux: true
