@@ -273,7 +273,7 @@ packages:
   - dummy
   - libcudnn9-cuda-12
   - libcudnn9-devel-cuda-12
-  - krun
+  - crun-krun
 exclude-packages:
   - firefox
   - pipewire
