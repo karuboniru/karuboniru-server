@@ -202,8 +202,11 @@ packages:
   - cockpit-storaged
   - pcp
   - pcp-conf
-  - pcp-pmda-libvirt
   - pcp-pmda-lmsensors
+  - pcp-pmda-mounts
+  - pcp-pmda-nvidia-gpu
+  - pcp-pmda-netfilter
+  - pcp-pmda-netcheck
   - btrbk
 
   # other 
@@ -267,7 +270,6 @@ packages:
   - xorg-x11-drv-nvidia-kmodsrc
   - xorg-x11-drv-nvidia-cuda-libs
   - nvidia-settings
-  - pcp-pmda-nvidia-gpu
 
   - kernel-devel
   - dummy
