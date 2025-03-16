@@ -8,8 +8,8 @@ include:
 ref: fedora/41/${basearch}/karuboniru-server
 
 repos:
-  - fedora-41
-  - fedora-41-updates
+  - fedora-42
+  - fedora-42-updates
   - ctk
   - nvidia
   - dummy
