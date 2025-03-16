@@ -1,5 +1,6 @@
 variables:
   bootable_container: true
+  exclude_perl: false
   variant: "server"
 include:
   - common.yaml

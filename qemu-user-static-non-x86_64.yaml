@@ -2,7 +2,6 @@
 # See: https://gitlab.com/fedora/ostree/sig/-/issues/59
 packages:
   - qemu-user-static-x86
-exclude-packages:
   - qemu-user-static-aarch64
   - qemu-user-static-alpha
   - qemu-user-static-arm
