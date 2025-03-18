@@ -277,6 +277,9 @@ packages:
   - libcudnn9-cuda-12
   - libcudnn9-devel-cuda-12
   - crun-krun
+
+  - js-d3-flame-graph
+  
 exclude-packages:
   - firefox
   - pipewire
