@@ -1,4 +1,3 @@
-root:x:0:
 bin:x:1:
 daemon:x:2:
 sys:x:3:
@@ -69,3 +68,8 @@ render:x:105:
 sgx:x:106:
 systemd-coredump:x:974:
 systemd-oom:x:973:
+qat:x:972:
+clock:x:103:
+colord:x:971:
+pcp:x:970:
+trafficserver:x:969:
