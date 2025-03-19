@@ -279,6 +279,8 @@ packages:
   - crun-krun
 
   - js-d3-flame-graph
+
+  - python-devel
   
 exclude-packages:
   - firefox
