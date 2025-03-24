@@ -2,6 +2,8 @@ include:
   - bootupd.yaml
   # Enable composefs
   - composefs.yaml
+  # Read only sysroot
+  - sysroot-ro.yaml
 ref: fedora/devel/${basearch}/iot
 repos: []
 selinux: true
