@@ -281,6 +281,8 @@ packages:
   - js-d3-flame-graph
 
   - python-devel
+
+  - mstflint
   
 exclude-packages:
   - firefox
