@@ -1,4 +1,4 @@
 include: fedora-iot-base.yaml
-ref: fedora/devel/${basearch}/iot
+ref: fedora/stable/${basearch}/iot
 repos:
 - fedora-42

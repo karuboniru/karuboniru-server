@@ -1,2 +1,2 @@
 include: fedora-iot-base.yaml
-ref: fedora/devel/${basearch}/updates/iot
+ref: fedora/stable/${basearch}/updates/iot
