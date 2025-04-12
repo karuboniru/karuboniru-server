@@ -283,6 +283,10 @@ packages:
   - python-devel
 
   - mstflint
+  - gcc14
+  - gcc14-c++
+  - gcc14-gfortran
+
   
 exclude-packages:
   - firefox
