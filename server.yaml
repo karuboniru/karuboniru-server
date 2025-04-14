@@ -324,21 +324,25 @@ postprocess:
     if [ -f $kmodsrc ]; then
       kmodule_path=$(realpath /lib/modules/*)
       # disable warnings during build
-      truncate -s0 ${kmodule_path}/build/scripts/Makefile.extrawarn
       kernel_uname=$(basename $kmodule_path)
       mkdir -p /tmp/kmod-build
       tar -xvf $kmodsrc -C /tmp/kmod-build
-      cd /tmp/kmod-build/kernel-open
-      fixopt="EXTRA_CFLAGS += -Wno-error=return-type -Wno-implicit-function-declaration -Wno-int-conversion -Wno-incompatible-pointer-types"
-      sed -i "90i $fixopt" Kbuild
-      make -O WARNINGS_AS_ERRORS=0 \
-              V=1 VERBOSE=1 CC='gcc -O2' \
+      # try with kernel-open first
+      # if it fails, try with kernel
+      (cd /tmp/kmod-build/kernel-open && \
+      make -O V=1 VERBOSE=1 CC='gcc -O2 -std=gnu17' \
               LD=ld.bfd KERNEL_UNAME=${kernel_uname} \
-              modules -j$(nproc)
-      make -O WARNINGS_AS_ERRORS=0 \
-              V=1 VERBOSE=1 CC='gcc -O2' \
+              modules -j$(nproc) && \
+      make -O V=1 VERBOSE=1 CC='gcc -O2 -std=gnu17' \
               LD=ld.bfd KERNEL_UNAME=${kernel_uname} \
-              modules_install
+              modules_install) || \
+      (cd /tmp/kmod-build/kernel && \
+      make -O V=1 VERBOSE=1 CC='gcc -O2 -std=gnu17' \
+              LD=ld.bfd KERNEL_UNAME=${kernel_uname} \
+              modules -j$(nproc) && \
+      make -O V=1 VERBOSE=1 CC='gcc -O2 -std=gnu17' \
+              LD=ld.bfd KERNEL_UNAME=${kernel_uname} \
+              modules_install) || exit 1
     fi
 
     # this break things, remove it
