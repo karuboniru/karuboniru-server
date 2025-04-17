@@ -175,7 +175,7 @@ packages:
 
   # container & VM
   - podman-docker
-  - podman 
+  - podman
   - podman-compose
   - pcp-pmda-podman
   - podman-tui
@@ -210,7 +210,7 @@ packages:
   - pcp-pmda-netcheck
   - btrbk
 
-  # other 
+  # other
   - flexiblas-openblas-serial
   - flexiblas-openblas-serial64
   - flexiblas-openblas-threads
@@ -287,7 +287,6 @@ packages:
   - gcc14-c++
   - gcc14-gfortran
 
-  
 exclude-packages:
   - firefox
   - pipewire
@@ -309,6 +308,11 @@ postprocess:
     # selinux modification
     semanage fcontext -a -f a -t user_home_t -r 's0' '/media/storage(/.*)?'
     semodule -i /etc/cils/*.cil /usr/share/udica/templates/{base_container.cil,net_container.cil}
+    # Compile selinux module!
+    checkmodule -M -m -o pmda_allow.mod pmda_allow.te
+    semodule_package -o pmda_allow.pp -m pmda_allow.mod
+    # Install the selinux module!
+    semodule -i pmda_allow.pp
     rm -rf /etc/cils
     setsebool -P nis_enabled 1
     setsebool -P samba_enable_home_dirs 1
@@ -348,7 +352,6 @@ postprocess:
     # this break things, remove it
     rm -rf /usr/lib/dracut/modules.d/95nfs
 
-
 add-files:
   [
     ["cils/adguardhome.cil", "/etc/cils/adguardhome.cil"],
@@ -380,4 +383,5 @@ add-files:
       "etc/systemd/system.conf.d/accounting.conf",
       "/etc/systemd/system.conf.d/accounting.conf",
     ],
+    ["cils/pmda_allow.te", "/etc/cils/pmda_allow.te"],
   ]

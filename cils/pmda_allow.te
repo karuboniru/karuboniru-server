@@ -1,0 +1,13 @@
+module pmda_allow 1.0;
+
+require {
+        type xserver_misc_device_t;
+        type pcp_pmcd_t;
+        type proc_psi_t;
+        class chr_file { read write };
+        class dir search;
+}
+
+#============= pcp_pmcd_t ==============
+allow pcp_pmcd_t proc_psi_t:dir search;
+allow pcp_pmcd_t xserver_misc_device_t:chr_file { read write };
