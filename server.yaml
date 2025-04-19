@@ -287,6 +287,12 @@ packages:
   - gcc14-c++
   - gcc14-gfortran
 
+  - libibverbs 
+  - libibverbs-utils 
+  - infiniband-diags
+  - rdma-core
+  
+
 exclude-packages:
   - firefox
   - pipewire
