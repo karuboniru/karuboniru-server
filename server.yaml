@@ -292,6 +292,7 @@ packages:
   - infiniband-diags
   - rdma-core
   - qperf
+  - perftest
   
 
 exclude-packages:
