@@ -45,7 +45,7 @@ jobs:
           skopeo login -u $username -p $password $registry
           mkdir -p download
           cd download 
-          dnf5 --repofrompath=cudnn,https://developer.download.nvidia.com/compute/cuda/repos/rhel9/x86_64 --repo=cudnn download libcudnn9-cuda-12 libcudnn9-devel-cuda-12
+          dnf5 --repofrompath=cudnn,https://developer.download.nvidia.com/compute/cuda/repos/rhel9/x86_64 --repo=cudnn download libcudnn9-cuda-12 libcudnn9-devel-cuda-12 libcudnn9-headers-cuda-12
           createrepo_c .
           cd ..
           mkdir -p repo cache
