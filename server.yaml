@@ -311,6 +311,7 @@ postprocess:
     # Enable root login with simple password, to
     # make sure user can get access after applying
     # image
+    rpm -q --queryformat %{nevra},%{buildtime} -f /usr/sbin/grub2-install
     rpm --dbpath=/usr/lib/sysimage/rpm -q --queryformat %{nevra},%{buildtime} -f /usr/sbin/grub2-install
     echo "root" | passwd --stdin root
     mkdir -p /etc/ssh/sshd_config.d
