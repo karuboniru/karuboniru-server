@@ -311,6 +311,7 @@ postprocess:
     # Enable root login with simple password, to
     # make sure user can get access after applying
     # image
+    strace -f /usr/bin/bootupctl backend generate-update-metadata -vvvvv
     echo "root" | passwd --stdin root
     mkdir -p /etc/ssh/sshd_config.d
     echo "PasswordAuthentication no" > /etc/ssh/sshd_config.d/99-password-authentication.conf
