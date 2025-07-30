@@ -31,7 +31,6 @@ repos:
   - ctk
   - nvidia
   - dummy
-  - cudnn
   - nvidia-user
   # - llvm-snapshot
   # - llvm-snapshot-rundep
@@ -291,8 +290,6 @@ packages:
 
   - kernel-devel
   - dummy
-  - libcudnn9-cuda-12
-  - libcudnn9-devel-cuda-12
   - crun-krun
 
   - js-d3-flame-graph

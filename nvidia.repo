@@ -23,9 +23,9 @@ module_hotfixes=1
 cost=1
 exclude=fake-grubby
 
-[cudnn]
-name=cuda-rhel9-x86_64
-baseurl=file://./download
-enabled=1
-gpgcheck=0
-cost=2000
+# [cudnn]
+# name=cuda-rhel9-x86_64
+# baseurl=file://./download
+# enabled=1
+# gpgcheck=0
+# cost=2000
