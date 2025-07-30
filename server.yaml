@@ -326,6 +326,7 @@ exclude-packages:
   - dnf-plugins-core
   - python3-tracer
   - tracer-common
+  - grubby
 
 postprocess:
   - |
