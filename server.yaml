@@ -2,6 +2,11 @@ variables:
   bootable_container: true
   exclude_perl: false
   variant: "server"
+
+releasever: 42
+automatic-version-prefix: "${releasever}.<date:%Y%m%d>"
+mutate-os-release: "${releasever}"
+
 include:
   - fedora-bootc-base/basic-fixes.yaml
   - fedora-bootc-base/bootc.yaml
