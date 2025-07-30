@@ -309,6 +309,9 @@ packages:
   - perftest
 
   - zig
+  - ImageMagick
+  - langpacks-en
+  - slirp4netns
 
 exclude-packages:
   - firefox
@@ -318,6 +321,11 @@ exclude-packages:
   - qt5-qtbase-common
   - akmods
   - akmod-nvidia
+  - PackageKit
+  - dnf-utils
+  - dnf-plugins-core
+  - python3-tracer
+  - tracer-common
 
 postprocess:
   - |
