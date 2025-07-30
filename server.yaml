@@ -9,7 +9,6 @@ include:
   - fedora-bootc-base/initramfs.yaml
   - fedora-bootc-base/kernel.yaml
   - fedora-bootc-base/ostree.yaml
-  - common.yaml
   - root-pythia6.yaml
 
 check-passwd:
