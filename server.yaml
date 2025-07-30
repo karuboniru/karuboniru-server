@@ -7,8 +7,11 @@ releasever: 42
 automatic-version-prefix: "${releasever}.<date:%Y%m%d>"
 mutate-os-release: "${releasever}"
 
+opt-usrlocal: "var"
+boot-location: modules
+tmp-is-dir: true
+
 include:
-  - fedora-bootc-base/basic-fixes.yaml
   - fedora-bootc-base/bootc.yaml
   - fedora-bootc-base/bootupd.yaml
   - fedora-bootc-base/initramfs.yaml
