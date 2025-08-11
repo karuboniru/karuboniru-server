@@ -4,7 +4,7 @@ include:
   - composefs.yaml
   # Read only sysroot
   - sysroot-ro.yaml
-ref: fedora/rawhide/${basearch}/iot
+ref: fedora/devel/${basearch}/iot
 repos: []
 selinux: true
 tmp-is-dir: true
