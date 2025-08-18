@@ -7,9 +7,9 @@ name: Build Ostree Container Image
 
 on:
   schedule:
-    - cron: '00 9 * * 1'
+    - cron: "00 9 * * 1"
   push:
-    branches: [ '*' ]
+    branches: ["*"]
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -20,7 +20,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: 
+    container:
       image: fedora:latest
       options: --privileged
     permissions:
@@ -31,12 +31,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
+
       - name: Build
         env:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}    
+          password: ${{ secrets.GITHUB_TOKEN }}
           image: ${{ env.IMAGE_NAME }}
           tag: ${{ github.ref_name }}
           composefile: server.yaml
@@ -44,7 +44,7 @@ jobs:
           dnf -y install rpm-ostree skopeo createrepo_c dnf5 selinux-policy-targeted --enablerepo=updates-testing
           skopeo login -u $username -p $password $registry
           mkdir -p download
-          cd download 
+          cd download
           dnf5 --repofrompath=cudnn,https://developer.download.nvidia.com/compute/cuda/repos/rhel9/x86_64 --repo=cudnn download libcudnn9-cuda-12 libcudnn9-devel-cuda-12 libcudnn9-headers-cuda-12
           createrepo_c .
           cd ..
@@ -52,7 +52,6 @@ jobs:
           ostree init --repo=repo --mode=archive
           rpm-ostree compose image --initialize-mode=if-not-exists \
             --format registry --layer-repo repo --cachedir=cache \
+            --copy-retry-times 16 \
             $composefile \
             $registry/$image:$tag
-
-        
