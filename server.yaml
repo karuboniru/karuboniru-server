@@ -316,6 +316,8 @@ packages:
   - langpacks-en
   - slirp4netns
 
+  - xrootd-voms xrootd-client voms-clients-cpp
+
 exclude-packages:
   - firefox
   - pipewire
