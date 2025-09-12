@@ -3,7 +3,7 @@ variables:
   exclude_perl: false
   variant: "server"
 
-releasever: 42
+releasever: 43
 automatic-version-prefix: "${releasever}.<date:%Y%m%d>"
 mutate-os-release: "${releasever}"
 
@@ -26,11 +26,11 @@ check-groups:
   type: "file"
   filename: "group"
 
-ref: fedora/42/${basearch}/karuboniru-server
+ref: fedora/43/${basearch}/karuboniru-server
 
 repos:
-  - fedora-42
-  - fedora-42-updates
+  - fedora-43
+  - fedora-43-updates
   - ctk
   - nvidia
   - dummy
