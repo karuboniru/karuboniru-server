@@ -12,11 +12,7 @@ boot-location: modules
 tmp-is-dir: true
 
 include:
-  - fedora-bootc-base/bootc.yaml
-  - fedora-bootc-base/bootupd.yaml
-  - fedora-bootc-base/initramfs.yaml
-  - fedora-bootc-base/kernel.yaml
-  - fedora-bootc-base/ostree.yaml
+  - bootupd.yaml
   - root-pythia6.yaml
 
 check-passwd:
@@ -96,7 +92,6 @@ packages:
   - cockpit
   - cockpit-kdump
   - cockpit-machines
-  - cockpit-navigator
   - cockpit-podman
   - cockpit-selinux
   - dhcp-client
@@ -148,7 +143,6 @@ packages:
   - fpaste
   - opensc
   - ghostscript
-  - ghostscript-tools-fonts
   - ghostscript-tools-printing
   - fzf
   - glances
@@ -390,6 +384,12 @@ postprocess:
 
     # this break things, remove it
     rm -rf /usr/lib/dracut/modules.d/95nfs
+    mkdir -p /usr/lib/dracut/dracut.conf.d
+    cat > /usr/lib/dracut/dracut.conf.d/20-bootc-base.conf << 'EOF'
+    # We want a generic image; hostonly makes no sense as part of a server side build
+    hostonly=no
+    add_dracutmodules+=" kernel-modules dracut-systemd systemd-initrd base ostree "
+    EOF
 
 add-files:
   [

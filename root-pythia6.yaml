@@ -67,7 +67,6 @@ packages:
   - root-gui-webdisplay
   - root-gui-webgui6
   - root-hist-factory
-  - root-html
   - root-io-dcache
   - root-io-sql
   - root-io-xml

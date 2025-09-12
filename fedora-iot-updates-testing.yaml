@@ -1,2 +1,0 @@
-include: fedora-iot-base.yaml
-ref: fedora/devel/${basearch}/testing/iot
