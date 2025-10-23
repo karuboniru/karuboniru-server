@@ -73,3 +73,4 @@ clock:x:103:
 colord:x:971:
 pcp:x:970:
 trafficserver:x:969:
+cvmfs:x:959:

@@ -16,6 +16,7 @@ include:
   - root-pythia6.yaml
   - sysroot-ro.yaml
   - kernel-install.yaml
+  - cvmfs.yaml
 
 check-passwd:
   type: "file"
