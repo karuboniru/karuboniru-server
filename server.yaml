@@ -330,6 +330,7 @@ exclude-packages:
   - tracer-common
   - grubby
 
+postprocess-script: treecompose-post.sh
 postprocess:
   - |
     set -xeuo pipefail
