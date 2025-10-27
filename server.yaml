@@ -187,6 +187,7 @@ packages:
   - dnsmasq
   - curl
   - libcurl
+  - libcurl-devel
   - less
 
   # container & VM
