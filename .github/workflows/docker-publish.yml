@@ -52,6 +52,7 @@ jobs:
           ostree init --repo=repo --mode=archive
           rpm-ostree compose image --initialize-mode=if-not-exists \
             --format registry --layer-repo repo --cachedir=cache \
+            --max-layers 256 \
             --copy-retry-times 16 \
             $composefile \
             $registry/$image:$tag
