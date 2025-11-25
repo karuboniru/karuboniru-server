@@ -17,6 +17,7 @@ include:
   - sysroot-ro.yaml
   - kernel-install.yaml
   - cvmfs.yaml
+  - evtgen.yaml
 
 check-passwd:
   type: "file"
