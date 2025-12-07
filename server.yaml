@@ -297,6 +297,7 @@ packages:
   - js-d3-flame-graph
 
   - python-devel
+  - uv
 
   - mstflint
   - gcc14
