@@ -1,4 +1,5 @@
 packages:
+  # ROOT with pythia6
   - root-fonts
   - root-icons
   - root-io
@@ -32,7 +33,6 @@ packages:
   - root-geom
   - root-netx
   - root-smatrix
-  # FOR Valor
   - root-minuit2
   - root-io-xml
   - root-io-xmlparser
@@ -66,6 +66,7 @@ packages:
   - root-gui-recorder
   - root-gui-webdisplay
   - root-gui-webgui6
+  - root-gui-qt6webdisplay
   - root-hist-factory
   - root-io-dcache
   - root-io-sql
@@ -77,10 +78,6 @@ packages:
   - root-net-http
   - root-net-httpsniff
   - root-net-rpdutils
-  - root-proof
-  - root-proof-bench
-  - root-proof-player
-  - root-proof-sessionviewer
   - root-quadp
   - root-roofit
   - root-roofit-batchcompute
@@ -107,3 +104,6 @@ packages:
   - root-unfold
   - root-unuran
   - root-xroofit
+  - egpythia6-standalone
+  - pythia6
+  - pythia6-devel
