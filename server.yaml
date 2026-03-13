@@ -302,9 +302,9 @@ packages:
   - uv
 
   - mstflint
-  - gcc14
-  - gcc14-c++
-  - gcc14-gfortran
+  - gcc15
+  - gcc15-c++
+  - gcc15-gfortran
 
   - libibverbs
   - libibverbs-utils
