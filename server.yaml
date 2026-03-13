@@ -3,7 +3,7 @@ variables:
   exclude_perl: false
   variant: "server"
 
-releasever: 43
+releasever: 44
 automatic-version-prefix: "${releasever}.<date:%Y%m%d>"
 mutate-os-release: "${releasever}"
 
@@ -26,11 +26,11 @@ check-groups:
   type: "file"
   filename: "group"
 
-ref: fedora/43/${basearch}/karuboniru-server
+ref: fedora/${releasever}/${basearch}/karuboniru-server
 
 repos:
-  - fedora-43
-  - fedora-43-updates
+  - fedora
+  - fedora-updates
   - ctk
   - nvidia
   - dummy
@@ -204,6 +204,7 @@ packages:
   - buildah
   - qemu-kvm
   - systemd-container
+  - systemd-pam
   # fs tools/storage
   - nfs-utils
   - cifs-utils
