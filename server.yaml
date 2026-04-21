@@ -89,6 +89,7 @@ packages:
   # system management & base functions
   - NetworkManager
   - NetworkManager-wifi
+  - NetworkManager-openvpn
   - acl
   - attr
   - bind-utils
