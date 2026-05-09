@@ -278,6 +278,7 @@ packages:
   - hdparm
 
   - git-lfs
+  - gh
 
   - nvidia-container-toolkit
   - nvidia-container-toolkit-selinux
