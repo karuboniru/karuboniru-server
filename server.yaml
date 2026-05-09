@@ -12,19 +12,19 @@ boot-location: modules
 tmp-is-dir: true
 
 include:
-  - bootupd.yaml
-  - root-pythia6.yaml
-  - sysroot-ro.yaml
-  - kernel-install.yaml
-  - cvmfs.yaml
-  - evtgen.yaml
+  - manifests/features/bootupd.yaml
+  - manifests/features/root-pythia6.yaml
+  - manifests/features/sysroot-ro.yaml
+  - manifests/features/kernel-install.yaml
+  - manifests/features/cvmfs.yaml
+  - manifests/features/evtgen.yaml
 
 check-passwd:
   type: "file"
-  filename: "passwd"
+  filename: "manifests/base/passwd"
 check-groups:
   type: "file"
-  filename: "group"
+  filename: "manifests/base/group"
 
 ref: fedora/${releasever}/${basearch}/karuboniru-server
 
@@ -338,7 +338,7 @@ exclude-packages:
   - tracer-common
   - grubby
 
-postprocess-script: treecompose-post.sh
+postprocess-script: manifests/treecompose-post.sh
 postprocess:
   - |
     set -xeuo pipefail
@@ -405,25 +405,25 @@ postprocess:
 
 add-files:
   [
-    ["cils/adguardhome.cil", "/etc/cils/adguardhome.cil"],
+    ["etc/selinux/adguardhome.cil", "/etc/cils/adguardhome.cil"],
     [
-      "cils/cloudflare_with_socket_access.cil",
+      "etc/selinux/cloudflare_with_socket_access.cil",
       "/etc/cils/cloudflare_with_socket_access.cil",
     ],
-    ["cils/comiclib.cil", "/etc/cils/comiclib.cil"],
-    ["cils/container_caddy.cil", "/etc/cils/container_caddy.cil"],
-    ["cils/container_alist.cil", "/etc/cils/container_alist.cil"],
-    ["cils/container_hath.cil", "/etc/cils/container_hath.cil"],
+    ["etc/selinux/comiclib.cil", "/etc/cils/comiclib.cil"],
+    ["etc/selinux/container_caddy.cil", "/etc/cils/container_caddy.cil"],
+    ["etc/selinux/container_alist.cil", "/etc/cils/container_alist.cil"],
+    ["etc/selinux/container_hath.cil", "/etc/cils/container_hath.cil"],
     [
-      "cils/container_rohome_allbind.cil",
+      "etc/selinux/container_rohome_allbind.cil",
       "/etc/cils/container_rohome_allbind.cil",
     ],
     [
-      "cils/container_rwhome_allbind.cil",
+      "etc/selinux/container_rwhome_allbind.cil",
       "/etc/cils/container_rwhome_allbind.cil",
     ],
-    ["cils/container_wireguard.cil", "/etc/cils/container_wireguard.cil"],
-    ["cils/container_jellyfin.cil", "/etc/cils/container_jellyfin.cil"],
+    ["etc/selinux/container_wireguard.cil", "/etc/cils/container_wireguard.cil"],
+    ["etc/selinux/container_jellyfin.cil", "/etc/cils/container_jellyfin.cil"],
     ["etc/containers/containers.conf", "/etc/containers/containers.conf"],
     ["etc/containers/storage.conf", "/etc/containers/storage.conf"],
     [
@@ -434,5 +434,5 @@ add-files:
       "etc/systemd/system.conf.d/accounting.conf",
       "/etc/systemd/system.conf.d/accounting.conf",
     ],
-    ["cils/pmda_allow.te", "/etc/cils/pmda_allow.te"],
+    ["etc/selinux/pmda_allow.te", "/etc/cils/pmda_allow.te"],
   ]
