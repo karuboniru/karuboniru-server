@@ -250,6 +250,7 @@ packages:
   - perl-Unicode-Normalize
   - perl-YAML-Tiny
   - perl-sigtrap
+  - libxcrypt-compat
   - plymouth
   - plymouth-scripts
   - systemd-oomd-defaults
