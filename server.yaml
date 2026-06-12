@@ -136,6 +136,10 @@ packages:
   - sssd
   - sssd-common
 
+  # security
+  - clamav
+  - clamav-freshclam
+
   # useful tools
   - which
   - wget
@@ -422,7 +426,10 @@ add-files:
       "etc/selinux/container_rwhome_allbind.cil",
       "/etc/cils/container_rwhome_allbind.cil",
     ],
-    ["etc/selinux/container_wireguard.cil", "/etc/cils/container_wireguard.cil"],
+    [
+      "etc/selinux/container_wireguard.cil",
+      "/etc/cils/container_wireguard.cil",
+    ],
     ["etc/selinux/container_jellyfin.cil", "/etc/cils/container_jellyfin.cil"],
     ["etc/containers/containers.conf", "/etc/containers/containers.conf"],
     ["etc/containers/storage.conf", "/etc/containers/storage.conf"],
