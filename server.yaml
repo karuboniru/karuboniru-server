@@ -139,6 +139,9 @@ packages:
   # security
   - clamav
   - clamav-freshclam
+  - clamd
+
+  - iwlwifi-mvm-firmware
 
   # useful tools
   - which
