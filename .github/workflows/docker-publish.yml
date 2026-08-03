@@ -21,7 +21,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: registry.fedoraproject.org/fedora:rawhide
+      image: registry.fedoraproject.org/fedora:44
       options: --privileged
     permissions:
       contents: read
@@ -41,7 +41,7 @@ jobs:
           tag: ${{ github.ref_name }}
           composefile: server.yaml
         run: |
-          dnf -y install rpm-ostree skopeo createrepo_c dnf5 selinux-policy-targeted --enablerepo=updates-testing
+          dnf -y install rpm-ostree skopeo createrepo_c dnf5 selinux-policy-targeted clang++ --enablerepo=updates-testing
           skopeo login -u $username -p $password $registry
           # mkdir -p download
           # cd download
