@@ -201,6 +201,7 @@ packages:
   - less
   - nodejs24-bin
   - nodejs24-npm-bin
+  - pnpm
 
   # container & VM
   - podman-docker
