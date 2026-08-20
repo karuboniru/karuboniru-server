@@ -6,7 +6,7 @@ skip_if_unavailable=True
 gpgcheck=1
 gpgkey=https://download.copr.fedorainfracloud.org/results/@fedora-llvm-team/llvm-snapshots/pubkey.gpg
 repo_gpgcheck=0
-enabled=1
+enabled=0
 enabled_metadata=1
 module_hotfixes=1
 
@@ -17,5 +17,5 @@ type=rpm-md
 skip_if_unavailable=True
 repo_gpgcheck=0
 gpgcheck=0
-enabled=1
+enabled=0
 enabled_metadata=1
