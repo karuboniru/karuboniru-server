@@ -368,6 +368,12 @@ postprocess:
     semodule_package -o pmda_allow.pp -m pmda_allow.mod
     # Install the selinux module!
     semodule -i pmda_allow.pp
+
+    checkmodule -M -m -o merged.mod merged.te
+    semodule_package -o merged.pp -m merged.mod
+    # Install the selinux module!
+    semodule -i merged.pp
+    
     cd /
     rm -rf /etc/cils
     setsebool -P nis_enabled 1
@@ -439,4 +445,5 @@ add-files:
     ],
     ["etc/selinux/container_jellyfin.cil", "/etc/cils/container_jellyfin.cil"],
     ["etc/selinux/pmda_allow.te", "/etc/cils/pmda_allow.te"],
+    ["etc/selinux/merged.te", "/etc/cils/merged.te"],
   ]
