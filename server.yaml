@@ -212,6 +212,7 @@ packages:
   - podman-tui
   - podmansh
   - podlet
+  - bcvk
   - skopeo
   - buildah
   - qemu-kvm
