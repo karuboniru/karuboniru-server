@@ -10,6 +10,7 @@ packages:
   - root-graf-gpad
   - root-graf3d
   - root-hist
+  - root-histv7
   - root-hist-painter
   - root-matrix
   - root-mathcore
