@@ -37,6 +37,7 @@ repos:
   - dummy
   - pythia6
   - nvidia-user
+  - agent-vm
   # - llvm-snapshot
   # - llvm-snapshot-rundep
 
@@ -205,6 +206,7 @@ packages:
   - pnpm
 
   # container & VM
+  - agent-vm
   - podman-docker
   - podman
   - podman-compose
