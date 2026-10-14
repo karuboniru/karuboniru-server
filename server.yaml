@@ -94,6 +94,7 @@ packages:
   - chrony
   - bootc
   - cockpit
+  - cockpit-files
   - cockpit-kdump
   - cockpit-machines
   - cockpit-podman
