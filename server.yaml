@@ -233,6 +233,7 @@ packages:
   - mdadm
   - lvm2
   - btrfs-progs
+  - fio
   - cockpit-storaged
   - pcp
   - pcp-conf
