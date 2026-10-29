@@ -18,6 +18,7 @@ include:
   - manifests/features/kernel-install.yaml
   - manifests/features/cvmfs.yaml
   - manifests/features/evtgen.yaml
+  - manifests/features/iwd.yaml
 
 check-passwd:
   type: "file"
