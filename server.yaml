@@ -269,6 +269,7 @@ packages:
   - rootfiles
   - tpm2-pkcs11
   - tpm2-pkcs11-tools
+  - gnupg2-scdaemon
   - oo7-daemon
   - words
   - xorg-x11-xauth
