@@ -35,6 +35,7 @@ repos:
   - fedora-updates-testing
   - pythia6
   - agent-vm
+  - NetBird
   # - llvm-snapshot
   # - llvm-snapshot-rundep
 
@@ -89,6 +90,7 @@ packages:
   - NetworkManager
   - NetworkManager-wifi
   - NetworkManager-openvpn
+  - netbird
   - acl
   - attr
   - bind-utils
