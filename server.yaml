@@ -325,6 +325,10 @@ packages:
   - xrootd-voms xrootd-client voms-clients-cpp
 
 exclude-packages:
+  - iptables-nft
+  - iptables-legacy-libs
+  - iptables-legacy
+  - ebtables-legacy
   - firefox
   - pipewire
   - pipewire-utils
