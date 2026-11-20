@@ -74,3 +74,12 @@ colord:x:971:
 pcp:x:970:
 trafficserver:x:969:
 cvmfs:x:959:
+empower:x:967:
+virusgroup:x:966:clamscan,clamupdate
+jwhois:x:965:
+rdma:x:964:
+clamupdate:x:963:
+clamscan:x:962:
+nm-openvpn:x:961:
+openvpn:x:960:
+pcscd:x:958:
