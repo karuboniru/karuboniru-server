@@ -147,6 +147,7 @@ packages:
   - iwlwifi-mvm-firmware
 
   # useful tools
+  - android-tools
   - which
   - wget
   - rsync
