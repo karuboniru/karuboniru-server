@@ -139,11 +139,6 @@ packages:
   - sssd
   - sssd-common
 
-  # security
-  - clamav
-  - clamav-freshclam
-  - clamd
-
   - iwlwifi-mvm-firmware
 
   # useful tools
